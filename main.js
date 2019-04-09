@@ -34,7 +34,7 @@ const failedPreview = state => state === "failure";
 const getSuccessfulDeployment = async () => {
   const {
     data: { statuses }
-  } = await octokit.repos.getCombinedStatusForRef({ owner, commit, repo });
+  } = await octokit.repos.getCombinedStatusForRef({ owner, ref: commit, repo });
 
   if (
     statuses.find(
