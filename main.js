@@ -2,6 +2,7 @@ import Octokit from "@octokit/rest";
 import pWaitFor from "p-wait-for";
 import consola from "consola";
 import envCi from "env-ci";
+import shell from "shelljs";
 
 const { commit, slug } = envCi();
 
@@ -55,5 +56,6 @@ const deployed = async () => Boolean(await getSuccessfulDeployment());
 
   const { target_url: targetUrl } = await getSuccessfulDeployment();
   consola.log(targetUrl);
+  shell.exec("export NETLIFY_PREVIEW_URL=" + targetUrl);
   return targetUrl;
 })();
