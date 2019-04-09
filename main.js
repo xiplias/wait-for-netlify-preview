@@ -21,7 +21,7 @@ const octokit = new Octokit({
   auth: `token ${process.env.GITHUB_API_TOKEN}`
 });
 
-const { owner, repo } = slug.split("/");
+const [owner, repo] = slug.split("/");
 
 const hasDeployPreview = context =>
   [/^netlify\/.*\/deploy-preview$/, /^deploy\/netlify$/].some(expr =>
