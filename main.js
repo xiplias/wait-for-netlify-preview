@@ -1,47 +1,59 @@
-import Octokit from '@octokit/rest'
-import pWaitFor from 'p-wait-for'
-import consola from 'consola'
+import Octokit from "@octokit/rest";
+import pWaitFor from "p-wait-for";
+import consola from "consola";
+import envCi from "env-ci";
+
+const { commit, slug } = envCi();
 
 const SimpleReporter = class {
   constructor({ stream } = {}) {
-    this.stream = stream || process.stdout
+    this.stream = stream || process.stdout;
   }
 
   log(logObj) {
-    this.stream.write(`${logObj.args[0]}\n`)
+    this.stream.write(`${logObj.args[0]}\n`);
   }
-}
+};
 
-consola.setReporters(new SimpleReporter())
+consola.setReporters(new SimpleReporter());
 const octokit = new Octokit({
   auth: `token ${process.env.GITHUB_API_TOKEN}`
-})
+});
 
-const owner = process.env.CIRCLE_PROJECT_USERNAME
-const repo = process.env.CIRCLE_PROJECT_REPONAME
-const ref = process.env.CIRCLE_SHA1
+const { owner, repo } = slug.split("/");
 
-const hasDeployPreview = context => [/^netlify\/.*\/deploy-preview$/, /^deploy\/netlify$/].some(expr => expr.test(context))
-const successPreview = state => state === 'success'
-const failedPreview = state => state === 'failure'
+const hasDeployPreview = context =>
+  [/^netlify\/.*\/deploy-preview$/, /^deploy\/netlify$/].some(expr =>
+    expr.test(context)
+  );
+const successPreview = state => state === "success";
+const failedPreview = state => state === "failure";
 
 const getSuccessfulDeployment = async () => {
-  const { data: { statuses } } = await octokit.repos.getCombinedStatusForRef({ owner, ref, repo })
-  
-  if (statuses.find(({ context, state }) => hasDeployPreview(context) && failedPreview(state))) {
-    consola.error('Deploy preview failed')
+  const {
+    data: { statuses }
+  } = await octokit.repos.getCombinedStatusForRef({ owner, commit, repo });
+
+  if (
+    statuses.find(
+      ({ context, state }) => hasDeployPreview(context) && failedPreview(state)
+    )
+  ) {
+    consola.error("Deploy preview failed");
     // Fail CI
-    process.exit(1)
+    process.exit(1);
   }
 
-  return statuses.find(({ context, state }) => hasDeployPreview(context) && successPreview(state))
-}
+  return statuses.find(
+    ({ context, state }) => hasDeployPreview(context) && successPreview(state)
+  );
+};
 
-const deployed = async () => Boolean(await getSuccessfulDeployment())
-;(async () => {
-  await pWaitFor(deployed, { interval: 15000 })
+const deployed = async () => Boolean(await getSuccessfulDeployment());
+(async () => {
+  await pWaitFor(deployed, { interval: 15000 });
 
-  const { target_url: targetUrl } = await getSuccessfulDeployment()
-  consola.log(targetUrl)
-  return targetUrl
-})()
+  const { target_url: targetUrl } = await getSuccessfulDeployment();
+  consola.log(targetUrl);
+  return targetUrl;
+})();
