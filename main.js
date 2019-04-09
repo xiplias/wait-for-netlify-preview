@@ -1,6 +1,7 @@
 import Octokit from '@octokit/rest'
 import pWaitFor from 'p-wait-for'
 import consola from 'consola'
+import shell from 'shelljs'
 
 const SimpleReporter = class {
   constructor({ stream } = {}) {
@@ -43,5 +44,7 @@ const deployed = async () => Boolean(await getSuccessfulDeployment())
 
   const { target_url: targetUrl } = await getSuccessfulDeployment()
   consola.log(targetUrl)
+  process.env.NETLIFY_PREVIEW_URL = targetUrl;
+  shell.exec('export NETLIFY_PREVIEW_URL=' + targetUrl);
   return targetUrl
 })()
