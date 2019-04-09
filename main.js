@@ -18,7 +18,8 @@ const SimpleReporter = class {
 
 consola.setReporters(new SimpleReporter());
 const octokit = new Octokit({
-  auth: `token ${process.env.GITHUB_API_TOKEN}`
+  auth: `token ${process.env.DANGER_GITHUB_API_TOKEN ||
+    process.env.GITHUB_API_TOKEN}`
 });
 
 const [owner, repo] = slug.split("/");
