@@ -17,8 +17,9 @@ const octokit = new Octokit({
   auth: `token ${process.env.GITHUB_API_TOKEN}`
 })
 
-const [owner, repo] = process.env.TRAVIS_REPO_SLUG.split('/')
-const ref = process.env.TRAVIS_PULL_REQUEST_SHA
+const owner = process.env.CIRCLE_PROJECT_USERNAME
+const repo = process.env.CIRCLE_PROJECT_REPONAME
+const ref = process.env.CIRCLE_SHA1
 
 const hasDeployPreview = context => [/^netlify\/.*\/deploy-preview$/, /^deploy\/netlify$/].some(expr => expr.test(context))
 const successPreview = state => state === 'success'
