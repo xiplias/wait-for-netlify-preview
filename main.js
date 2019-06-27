@@ -57,6 +57,9 @@ const deployed = async () => Boolean(await getSuccessfulDeployment());
 
   const { target_url: targetUrl } = await getSuccessfulDeployment();
   consola.log(targetUrl);
-  shell.exec("export NETLIFY_PREVIEW_URL=" + targetUrl);
+  shell.exec(
+    "./node_modules/.bin/debugbear --pageId=744 --baseBranch=develop" +
+      targetUrl
+  );
   return targetUrl;
 })();

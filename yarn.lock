@@ -721,6 +721,11 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
   integrity sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
 
+"@types/node@^10.12.21":
+  version "10.14.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.10.tgz#e491484c6060af8d461e12ec81c0da8a3282b8de"
+  integrity sha512-V8wj+w2YMNvGuhgl/MA5fmTxgjmVHVoasfIaxMMZJV6Y8Kk+Ydpi1z2whoShDCJ2BuNVoqH/h1hrygnBxkrw/Q==
+
 "@types/q@^1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
@@ -1070,6 +1075,11 @@ bili@^4.2.5:
     rollup-plugin-postcss "^2.0.3"
     rollup-plugin-replace "^2.1.0"
     rollup-plugin-terser "^4.0.2"
+
+bluebird@^3.5.0:
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
+  integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
 
 boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
@@ -1468,6 +1478,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   integrity sha512-brWl9y6vOB1xYPZcpZde3N9zDByXTosAeMDo4p1wzo6UMOX4vumB+TP1RZ76sfE6Md68Q0NJSrE/gbezd4Ul+w==
   dependencies:
     delayed-stream "~1.0.0"
+
+commander@^2.19.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
+  integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
 commander@~2.17.1:
   version "2.17.1"
@@ -1986,6 +2001,18 @@ debug@^4.0.1, debug@^4.1.0:
   dependencies:
     ms "^2.1.1"
 
+debugbear@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/debugbear/-/debugbear-0.1.6.tgz#87ac109a4d4fe783e05f04347a8682948cb73286"
+  integrity sha512-ILNU7eWKPwtT3zz5B6BRWxO0/RvUJPB6g/0GKm1bKogRZDH+lUGSlGYAXjEBpOZueCpVU5D5ymlnMHkcC33K1w==
+  dependencies:
+    "@types/node" "^10.12.21"
+    commander "^2.19.0"
+    env-ci "^3.2.0"
+    lodash "^4.17.11"
+    request "^2.88.0"
+    request-promise "^4.2.2"
+
 decamelize-keys@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/decamelize-keys/-/decamelize-keys-1.1.0.tgz#d171a87933252807eb3cb61dc1c1445d078df2d9"
@@ -2196,6 +2223,14 @@ entities@~1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
   integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
+
+env-ci@^3.2.0:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-3.2.2.tgz#06936f1fcfbc999102a2211fc2539df64062b61f"
+  integrity sha512-AOiNZ3lmxrtva3r/roqaYDF+1PX2V+ouUzuGqJf7KNxyyYkuU+CsfFbbUeibQPdixxjI/lP6eDtvtkX1/wymJw==
+  dependencies:
+    execa "^1.0.0"
+    java-properties "^1.0.0"
 
 error-ex@^1.2.0, error-ex@^1.3.1:
   version "1.3.2"
@@ -2893,6 +2928,18 @@ glob-parent@^2.0.0:
   dependencies:
     is-glob "^2.0.0"
 
+glob@^7.0.0:
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
+  integrity sha512-hkLPepehmnKk41pUGm3sYxoFs/umurYfYJCerbXEyFIWcAzvpipAgVkBqqT9RBKMGjnq6kMuyYwha6csxbiM1A==
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
 glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3:
   version "7.1.3"
   resolved "https://registry.npmjs.org/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
@@ -3175,6 +3222,11 @@ inquirer@^6.1.0:
     string-width "^2.1.0"
     strip-ansi "^5.0.0"
     through "^2.3.6"
+
+interpret@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
+  integrity sha512-mT34yGKMNceBQUoVn7iCDKDntA7SC6gycMAWzGx1z/CMCTV7b2AAtXlo3nRyHZ1FelRkQbQjprHSYGwzLtkVbw==
 
 invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
@@ -3588,6 +3640,11 @@ istanbul-reports@^2.0.3:
   integrity sha512-qpQ5ZWBkOatTxmTelS+HV5ybPSq7EeXmwXrPbGv7ebP+9DJOtveUcv6hCncZE4IxSAEkdmLEh3xo31SCttbApQ==
   dependencies:
     handlebars "^4.0.11"
+
+java-properties@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/java-properties/-/java-properties-1.0.1.tgz#ea0b5986c0894d73cf2a44de8bd216c459a07a94"
+  integrity sha512-HbTaaXlIHoDVNXjmp4flOBWOfYBkrVN8dD1tp4m+95M/ADSDW/BxWbiwyVIhw/2+5d0cof4PHZCbE7+S1ukTQw==
 
 jest-changed-files@^24.0.0:
   version "24.0.0"
@@ -5622,6 +5679,13 @@ realpath-native@^1.0.0, realpath-native@^1.0.2:
   dependencies:
     util.promisify "^1.0.0"
 
+rechoir@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"
+  integrity sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=
+  dependencies:
+    resolve "^1.1.6"
+
 redent@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/redent/-/redent-1.0.0.tgz#cf916ab1fd5f1f16dfb20822dd6ec7f730c2afde"
@@ -5760,6 +5824,13 @@ request-promise-core@1.1.1:
   dependencies:
     lodash "^4.13.1"
 
+request-promise-core@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/request-promise-core/-/request-promise-core-1.1.2.tgz#339f6aababcafdb31c799ff158700336301d3346"
+  integrity sha512-UHYyq1MO8GsefGEt7EprS8UrXsm1TxEvFUX1IMTuSLU2Rh7fTIdFtl8xD7JiEYiWU2dl+NYAjCTksTehQUxPag==
+  dependencies:
+    lodash "^4.17.11"
+
 request-promise-native@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.5.tgz#5281770f68e0c9719e5163fd3fab482215f4fda5"
@@ -5769,7 +5840,17 @@ request-promise-native@^1.0.5:
     stealthy-require "^1.1.0"
     tough-cookie ">=2.3.3"
 
-request@^2.87.0:
+request-promise@^4.2.2:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/request-promise/-/request-promise-4.2.4.tgz#1c5ed0d71441e38ad58c7ce4ea4ea5b06d54b310"
+  integrity sha512-8wgMrvE546PzbR5WbYxUQogUnUDfM0S7QIFZMID+J73vdFARkFy+HElj4T+MWYhpXwlLp0EQ8Zoj8xUA0he4Vg==
+  dependencies:
+    bluebird "^3.5.0"
+    request-promise-core "1.1.2"
+    stealthy-require "^1.1.1"
+    tough-cookie "^2.3.3"
+
+request@^2.87.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://registry.npmjs.org/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
@@ -5841,6 +5922,13 @@ resolve@1.1.7:
   version "1.1.7"
   resolved "https://registry.npmjs.org/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
   integrity sha1-IDEU2CrSxe2ejgQRs5ModeiJ6Xs=
+
+resolve@^1.1.6:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.11.1.tgz#ea10d8110376982fef578df8fc30b9ac30a07a3e"
+  integrity sha512-vIpgF6wfuJOZI7KKKSP+HmiKggadPQAdsp5HiC1mvqnfp0gF1vdwgBWZIdrVft9pgqoMFQN+R7BSWZiBxx+BBw==
+  dependencies:
+    path-parse "^1.0.6"
 
 resolve@^1.3.2, resolve@^1.5.0, resolve@^1.8.1:
   version "1.9.0"
@@ -6087,6 +6175,15 @@ shebang-regex@^1.0.0:
   resolved "https://registry.npmjs.org/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
   integrity sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
 
+shelljs@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.3.tgz#a7f3319520ebf09ee81275b2368adb286659b097"
+  integrity sha512-fc0BKlAWiLpwZljmOvAOTE/gXawtCoNrP5oaY7KIaQbbyHeQVg01pSEuEGvGh3HEdBU4baCD7wQBwADmM/7f7A==
+  dependencies:
+    glob "^7.0.0"
+    interpret "^1.0.0"
+    rechoir "^0.6.2"
+
 shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
@@ -6306,7 +6403,7 @@ std-env@^2.2.1:
   dependencies:
     ci-info "^1.6.0"
 
-stealthy-require@^1.1.0:
+stealthy-require@^1.1.0, stealthy-require@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
@@ -6610,7 +6707,7 @@ tough-cookie@>=2.3.3:
     psl "^1.1.28"
     punycode "^2.1.1"
 
-tough-cookie@^2.3.4:
+tough-cookie@^2.3.3, tough-cookie@^2.3.4:
   version "2.5.0"
   resolved "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
   integrity sha512-nlLsUzgm1kfLXSXfRZMc1KLAugd4hqJHDTvc2hDIwS3mZAfMEuMbc03SujMF+GEcpaX/qboeycw6iO8JwVv2+g==

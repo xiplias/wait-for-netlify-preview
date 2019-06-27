@@ -36,6 +36,7 @@
   "dependencies": {
     "@octokit/rest": "^16.15.0",
     "consola": "^2.4.1",
+    "debugbear": "^0.1.6",
     "env-ci": "^3.2.0",
     "esm": "^3.2.4",
     "p-wait-for": "^2.0.1",
